@@ -23,6 +23,6 @@
     "@": "src",
     "@app": "src/app.js",
     "@config": "src/config/index.js",
-    "@controller": "src/controllers"
+    "@controllers": "src/controllers"
   }
 }
