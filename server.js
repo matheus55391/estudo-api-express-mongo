@@ -1,23 +1,23 @@
 require('dotenv').config()
 require('module-alias/register')
 
+
+
+
+const mongoose = require('mongoose')
+
 const http = require('http')
-const config = require('@config')
-const app = require('@app')
-
-
 const server = http.createServer(app)
 
-const port = config.app.port
 
-server.listen(port, ()=>{
-    console.log(`
-    ---------------------------------------
-    -                                     -  
-    -    O servidor foi inicializado!!    -
-    -                                     -
-    -    http://localhost:${port}         -
-    -                                     -
-    ---------------------------------------
-    `)
-})
+
+mongoose
+    .connect(config.db.uri, { useNewUrlParser: true })
+    .then(() => {
+        const config = require('@config')
+        const app = require('@app')
+        const port = config.app.port        
+        server.listen(port, ()=>{
+            console.log(`Servidor inicializado ->  http://localhost:${port}`)
+        })        
+    })
