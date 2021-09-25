@@ -1,9 +1,9 @@
 
 const router = require('express').Router()
 
-const TesteController = require('@controller/testeController')
-const ApiController = require('@controller/apiController')
-const produtoController = require('@controller/produtoController')
+const TesteController = require('@controllers/testeController')
+const ApiController = require('@controllers/apiController')
+const produtoController = require('@controllers/produtoController')
 
 router.get('/', ApiController.HelloWorld)
 router.get('/teste', TesteController.GetTeste)

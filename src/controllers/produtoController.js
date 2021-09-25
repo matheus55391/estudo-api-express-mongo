@@ -1,4 +1,4 @@
-let produtoModel = require('../helpers/cadastrarProduto')
+let produtoModel = require('../services/cadastrarProduto')
 produtomodel = produtoModel.cadastrarProduto
 exports.PostCadastroProduto = async (req, res, next) =>{
 

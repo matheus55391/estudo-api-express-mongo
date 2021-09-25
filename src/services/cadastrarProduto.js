@@ -1,7 +1,7 @@
 
 
 exports.cadastrarProduto = async (data) =>{
-    const Produto = require("../model/Produto")
+    const Produto = require("../models/Produto")
     const produto = new Produto({
         nome: data.nome,
         descricao: data.descricao,
