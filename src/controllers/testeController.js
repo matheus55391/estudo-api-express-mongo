@@ -3,6 +3,3 @@ exports.GetTeste = (req, res, next) =>{
         messagem: 'Controller de teste!'
     })
 }
-
-
-

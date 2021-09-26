@@ -7,6 +7,9 @@ const produtoController = require('@controllers/produtoController')
 
 router.get('/', ApiController.HelloWorld)
 router.get('/teste', TesteController.GetTeste)
-router.post('/cadastrar', produtoController.PostCadastroProduto)
+router.get('/produto', produtoController.GetObterProdutos)
+
+router.post('/produto/cadastrar', produtoController.PostCadastroProduto)
+
 
 module.exports = router

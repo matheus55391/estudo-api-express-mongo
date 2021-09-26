@@ -18,7 +18,7 @@ const ProdutoModel = new Schema({
     descricao: String,
     preco: Number,
     vendedorId: Number
-})
+}, { versionKey: false  })
 
 module.exports = mongoose.model('Produto', ProdutoModel)
  

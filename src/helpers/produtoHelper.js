@@ -1,7 +1,9 @@
+const Produto = require("../models/Produto.js")
 
+exports.ObterProdutos = async () =>{ return await Produto.find({}) }
+  
+exports.CadastrarProduto = async (data) =>{
 
-exports.cadastrarProduto = async (data) =>{
-    const Produto = require("../models/Produto")
     const produto = new Produto({
         nome: data.nome,
         descricao: data.descricao,
