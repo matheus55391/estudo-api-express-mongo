@@ -16,3 +16,10 @@ exports.CadastrarProduto = async (data) =>{
     
     return produto
 }
+
+exports.ObterProdutosPeloNome = async (produto_nome) =>{
+
+    produto_nome = '.*' + produto_nome + '.*'
+    
+    return await Produto.find({nome: {$regex: produto_nome, $options: 'i'}})
+}
