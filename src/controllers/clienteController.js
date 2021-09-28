@@ -7,7 +7,12 @@ exports.PostLogin = async (req, res, next) =>{
 }
 
 exports.PostCadastroCliente = async (req, res, next) =>{
+
     let cliente = await ClienteHelper.CadastrarCliente(req.body)
-    res.json(cliente)
+    
+    if(cliente.error)
+        return res.status(500).json(cliente)
+
+    res.status(200).json(cliente)
     return
 }

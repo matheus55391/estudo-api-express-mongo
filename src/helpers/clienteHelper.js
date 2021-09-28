@@ -1,20 +1,22 @@
-const cli = require("nodemon/lib/cli")
 const Cliente = require("../models/Cliente.js")
 
 exports.CadastrarCliente = async (data)=>{
+    try{
+        const cliente = new Cliente({
+            login: data.login,
+            senha: data.senha,
+        })    
 
-    const cliente = new Cliente({
-        login: data.login,
-        senha: data.senha,
-    })
+        return await cliente.save() 
 
-    await cliente.save((err, cliente)=>{
-        if(err)
-            return {message: err}
-        return cliente
-    })
-    
-    
+    } catch (err) {
+        return {
+            error:{ 
+                    code: err.code,
+                    message: err.message
+                }
+        }
+    }
 }
 
 exports.ObterCliente = async (data)=>{
