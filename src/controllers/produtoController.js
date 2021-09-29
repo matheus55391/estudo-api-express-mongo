@@ -25,3 +25,7 @@ exports.GetObterProdutosPeloNome = async (req, res, next) =>{
     res.status(404).json({error: new Error("Produto não encontrado")})
     return
 }
+
+exports.PatchDesativarProduto = async (req, res, next) =>{
+    let nome
+}

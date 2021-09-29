@@ -8,11 +8,17 @@ const clienteController = require('@controllers/clienteController')
 
 router.get('/', ApiController.HelloWorld)
 router.get('/teste', TesteController.GetTeste)
-router.get('/produto/', produtoController.GetObterProdutos)
-router.get('/produto/p/:nome', produtoController.GetObterProdutosPeloNome)
 
-router.post('/login', clienteController.PostLogin)
+// Produto
+router.get('/produto/todos', produtoController.GetObterProdutos)
+router.get('/produto/p/:nome', produtoController.GetObterProdutosPeloNome)
 router.post('/produto/cadastrar', produtoController.PostCadastroProduto)
+router.patch('/produto/', produtoController.PatchDesativarProduto)
+
+// Cliente
+router.post('/login', clienteController.PostLogin)
 router.post('/cadastro', clienteController.PostCadastroCliente)
+
+
 
 module.exports = router
