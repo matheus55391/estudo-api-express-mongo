@@ -26,6 +26,14 @@ exports.GetObterProdutosPeloNome = async (req, res, next) =>{
     return
 }
 
-exports.PatchDesativarProduto = async (req, res, next) =>{
-    let nome
+exports.PatchDesativarProdutoPeloId = async (req, res, next) =>{
+    let produtoId = req.params.id
+    if(produtoId){
+        let result = await ProdutoHelper.DesativarProdutoPeloId(produtoId)
+        if(result.length){
+            res.json(result)
+        }
+    }
+    res.status(404).json({error: new Error("Produto não encontrado")})
+    return
 }

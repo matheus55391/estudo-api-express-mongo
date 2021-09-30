@@ -23,3 +23,9 @@ exports.ObterProdutosPeloNome = async (produto_nome) =>{
     
     return await Produto.find({nome: {$regex: produto_nome, $options: 'i'}})
 }
+
+exports.DesativarProdutoPeloId = async (produto_id) =>{
+    
+
+    return await Produto.findOneAndUpdate({_id: produto_id},{$set: {situacao: '0'}})
+}
