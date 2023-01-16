@@ -9,13 +9,13 @@ router.get('/', ApiController.HelloWorld)
 router.get('/teste', TesteController.GetTeste)
 
 // Produto
-router.get('/produto/p/:nome', produtoController.GetObterProdutosPeloNome)
-router.get('/produto/todos', produtoController.GetObterProdutos)
-router.post('/produto/cadastrar', produtoController.PostCadastroProduto)
-router.patch('/produto/desativar', produtoController.PatchDesativarProdutoPeloId)
+router.get('/produto/nome/:nome', produtoController.GetObterProdutosPeloNome)
+router.get('/produto', produtoController.GetObterProdutos)
+router.post('/produto', produtoController.PostCadastroProduto)
+router.patch('/produto', produtoController.PatchDesativarProdutoPeloId)
 
 // Cliente
-router.post('/login', clienteController.PostLogin)
-router.post('/cadastro', clienteController.PostCadastroCliente)
+router.post('auth/login', clienteController.PostLogin)
+router.post('auth/cadastro', clienteController.PostCadastroCliente)
 
 module.exports = router
